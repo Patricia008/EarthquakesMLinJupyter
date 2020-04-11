@@ -1,6 +1,6 @@
 import express from 'express'
 import opn from 'opn'
-import { computeAndExportToGraphJson, getAllQuakes } from './app/App'
+import { getAllRadiusCombinations } from './app/App'
 
 // computeAndExportToMap()
 
@@ -15,7 +15,7 @@ const PORT = 1337
 // 	opn('http://127.0.0.1:1337/')
 // })
 
-getAllQuakes().then(() => {
+getAllRadiusCombinations().then(() => {
 
 	const app = express()
 	app.use(express.static(__dirname))

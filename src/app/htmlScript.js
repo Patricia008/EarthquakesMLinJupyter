@@ -51,7 +51,7 @@ require([
 	// 	})
 
 	// all quakes points
-	fetch('quakes.json')
+	fetch('quakes_radius5000.json')
 		.then(response => response.json())
 		.then(jsonResponse => {
 			console.log(jsonResponse[0])

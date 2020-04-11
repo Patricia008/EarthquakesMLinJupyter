@@ -13,6 +13,7 @@ export const algoEnum = {
 }
 
 const maxNrOfChildren = 2000
+const maxGraphSize = 2000
 
 export default {
 	USGS_API_URL: process.env.USGS_API_URL,
@@ -20,9 +21,9 @@ export default {
 	STARTTIME: startDate.toISOString(),
 	ENDTIME: endDate.toISOString(),
 	DAYS_BETWEEN_QUAKES: 10000,
-	LIMIT: '' + maxNrOfChildren,
+	LIMIT: maxGraphSize < 2000 ? '' + maxGraphSize : '2000',
 	RADIUS: 200,
-	MAX_GRAPH_SIZE: 5000,
+	MAX_GRAPH_SIZE: maxGraphSize,
 	MAX_NR_OF_CHILDREN: maxNrOfChildren,
 	ALGO: algoEnum.BREADTH_FIRST,
 }

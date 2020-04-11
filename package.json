@@ -24,6 +24,7 @@
     "fs": "0.0.1-security",
     "node-fetch": "^2.6.0",
     "opn": "^6.0.0",
+    "random-forest-classifier": "^0.6.0",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5"
   },

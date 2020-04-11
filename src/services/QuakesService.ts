@@ -4,17 +4,17 @@ import { coordinates } from '../config/regionCoordinates'
 import parameterConfig from '../config/parameterConfig'
 import EarthquakeModel from '../graph/EarthquakeModel'
 
-export async function getAllQuakesForParams() {
+export async function getAllQuakesForParams(radius: string) {
 	const quakes = []
 	let csv = `latitude,longitude,depth,mag\n`
 	let offset = 1
 	let usgsData = await getCustomEarthquakesInRadius(
 		coordinates[parameterConfig.START_POINT],
-		parameterConfig.RADIUS,
+		radius,
 		parameterConfig.STARTTIME,
 		parameterConfig.ENDTIME,
 		'time',
-		'2000',
+		parameterConfig.LIMIT,
 		'' + offset,
 	)
 
@@ -44,7 +44,7 @@ export async function getAllQuakesForParams() {
 			parameterConfig.STARTTIME,
 			parameterConfig.ENDTIME,
 			'time',
-			'2000',
+			parameterConfig.LIMIT,
 			'' + offset,
 		)
 		offset += usgsData.metadata.count
