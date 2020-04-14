@@ -58,7 +58,7 @@ require([
 			const view = new MapView({
 				container: "viewDiv",
 				map: map,
-				center: [jsonResponse[0].geometry.coordinates[0], jsonResponse[0].geometry.coordinates[1]],
+				center: jsonResponse[0] && [jsonResponse[0].geometry.coordinates[0], jsonResponse[0].geometry.coordinates[1]],
 				zoom: 5,
 			})
 		

@@ -1,3 +1,5 @@
+import { coordinates } from '~/config/regionCoordinates'
+
 export default class EarthquakeModel {
 
 	properties: {
@@ -19,5 +21,16 @@ export default class EarthquakeModel {
 	constructor(data) {
 		Object.assign(this, data)
 		this.properties.time = new Date(data.properties.time).toISOString()
+	}
+
+	equals(target: EarthquakeModel) {
+
+		// tslint:disable-next-line:no-unused-expression
+		return this.properties.mag === target.properties.mag &&
+			this.properties.place === target.properties.place &&
+			this.properties.time === target.properties.time &&
+			this.geometry.coordinates[0] === target.geometry.coordinates[0] &&
+			this.geometry.coordinates[1] === target.geometry.coordinates[1] &&
+			this.geometry.coordinates[2] === target.geometry.coordinates[2]
 	}
 }
