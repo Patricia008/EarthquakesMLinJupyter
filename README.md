@@ -1,6 +1,14 @@
 # EarthquakesMLinJupyter
 Jupyter notebook: Predict earthquake magnitude based on position and depth
 
+## Jupyter notebook
+
+### Usage
+
+`cd ./jupyter`
+`inputFileName='quakes_radius1500.csv' runipy PredictMagnitude.ipynb`
+
+## Node
 
 ### Usage
 
