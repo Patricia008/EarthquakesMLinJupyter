@@ -13,7 +13,7 @@ export const getAllRadiusCombinations = async () => {
 	const radius = ['50', '200', '1000', '1500', '3000', '5000']
 	// write form here, in order to be written only once
 	// tslint:disable-next-line:max-line-length
-	appendToFile(`jupyter/predictions.csv`, `Radius,Real_Magnitude,Random_Forest_Classifier,Multi_Layer_Perceptron,MLP_With_Scaling,Logistic_Regression,SupportVectorMachines,RandomForests\n`)
+	appendToFile(`jupyter/predictions.csv`, `Radius,Real_Magnitude,Random_Forest_Classifier,Multi_Layer_Perceptron,MLP_With_Scaling,Logistic_Regression,Support_Vector_Machines,Random_Forests\n`)
 
 	// first quake (for which we predict) should always be the same for all computations, radius and params
 	const targetQuake = await getTargetQuake()
