@@ -58,7 +58,7 @@ export async function getAllQuakesForParams(radius: string, targetQuake: Earthqu
 		offset + usgsData.metadata.count < parameterConfig.MAX_GRAPH_SIZE) {
 		usgsData = await getCustomEarthquakesInRadius(
 			coordinates[parameterConfig.START_POINT],
-			parameterConfig.RADIUS,
+			radius,
 			parameterConfig.STARTTIME,
 			parameterConfig.ENDTIME,
 			'time',

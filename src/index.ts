@@ -20,5 +20,5 @@ getAllRadiusCombinations().then(() => {
 	const app = express()
 	app.use(express.static(__dirname))
 	app.listen(PORT, HOST)
-	opn('http://127.0.0.1:1337/')
+	opn('http://127.0.0.1:1337?radius=5000')
 })

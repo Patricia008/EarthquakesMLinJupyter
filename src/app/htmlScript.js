@@ -50,8 +50,11 @@ require([
 	// 		})
 	// 	})
 
+	const radius = window.location.href.split('radius=')[1]
+
+	const fileName = radius ? `quakes_radius${radius}.json` : `quakes_radius5000.json`
 	// all quakes points
-	fetch('quakes_radius5000.json')
+	fetch(fileName)
 		.then(response => response.json())
 		.then(jsonResponse => {
 			console.log(jsonResponse[0])

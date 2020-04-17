@@ -14,7 +14,7 @@ Edit the desired starting point, start date and other params(radius, graph size)
 If not already there, add the coordinates of the desired starting point in src/config/regionCoordinates.ts<br/>
 The program will generate csv files with earthquake data that are fed to jupyter notebook ML algorithms and outputed in predictions.csv <br/>
 Map displays earthquakes used for the prediction of the magnitude with radius param = 5000 <br/>
-To see another representation, change in ./src/app/htmlScript.js, the fetch file 'quakes_radius5000.json' to radiusWhatever <br/>
+To see another representation, change in url ?radius=5000 to ??radius=radiusWhatever <br/>
 To see the plots, go to ./jupyter and run: <br/>
 `jupyter notebook` <br/>
 then open 'Plots.ipynb' and run it

@@ -20,10 +20,10 @@ export default {
 	START_POINT: regions.CHILE,
 	STARTTIME: startDate.toISOString(),
 	ENDTIME: endDate.toISOString(),
-	DAYS_BETWEEN_QUAKES: 10000,
 	LIMIT: maxGraphSize < 2000 ? '' + maxGraphSize : '2000',
-	RADIUS: 200,
+	RADIUSES: ['50', '200', '1000', '1500', '3000', '5000'],
 	MAX_GRAPH_SIZE: maxGraphSize,
 	MAX_NR_OF_CHILDREN: maxNrOfChildren,
+	DAYS_BETWEEN_QUAKES: 10000,
 	ALGO: algoEnum.BREADTH_FIRST,
 }
