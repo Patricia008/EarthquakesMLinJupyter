@@ -1,6 +1,7 @@
 # EarthquakesMLinJupyter
 Jupyter notebook: Predict earthquake magnitude based on position and depth
 
+Given a fixed point(longitude and latitude), data is fetched from the USGS and exported to csv files. Then, a jupyter notebook is called with the files as input. In the python part, there are used five different machine learning algorithms with different configurations, trying to predict the magnitude of the target point: Random Forest Classifier, Multi Layer Perceptron without data scaling, Multi Layer Perceptron with data scaling, Logistic Regression and Support Vector Machines. This process is done for different radiuses around the target earthquake. Outputs from each approach is written to a file which is given as input to another notebook, used for plots. There, data is visualized in the form of graphs: Magnitude VS Radius for each of the algorithms and Magnitude VS Algorithm for each of the chosen radiuses.
 
 ## Node
 

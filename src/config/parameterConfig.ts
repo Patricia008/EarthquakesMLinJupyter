@@ -3,7 +3,7 @@ import { regions } from '../config/regionCoordinates'
 
 dotenv.config()
 
-const startDate = new Date(2020, 11, 1)
+const startDate = new Date(2020, 3, 1)
 const endDate = new Date(1900, 11, 1)
 
 export const algoEnum = {

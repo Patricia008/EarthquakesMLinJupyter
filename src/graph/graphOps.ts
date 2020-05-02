@@ -143,7 +143,7 @@ const getAdjacentQuakes = async (graph: GraphModel, quake: EarthquakeModel) => {
 
 	// CALL API FOR EARTHQUAKES THAT HAPPENED BEFORE THE CURRENT ONE
 	const usgsData = await getEarthquakesInRadius(
-		{ long: coord[0], lat: coord[1] }, parameterConfig.RADIUS, quake.properties.time)
+		{ long: coord[0], lat: coord[1] }, parameterConfig.RADIUSES[0], quake.properties.time)
 
 	return usgsData
 }
@@ -153,7 +153,7 @@ export const buildGraph = async (graph: GraphModel) => {
 	// FIND GREATEST MAGNITUDE EARTHQUAKE IN REGION - no
 	const usgsData = await getEarthquakesInRadius(
 		coordinates[parameterConfig.START_POINT],
-		parameterConfig.RADIUS,
+		parameterConfig.RADIUSES[0],
 		parameterConfig.STARTTIME,
 		'time',
 		'1',

@@ -1,5 +1,5 @@
 import EarthquakeModel from '../graph/EarthquakeModel'
-import { appendToFile, writeToFile } from '../utils/fileHandlers'
+import { writeToFile } from '../utils/fileHandlers'
 import { getAllQuakesForParams } from '../services/QuakesService'
 import { callJupyterForRadius } from '../services/CallPythonService'
 import { getCustomEarthquakesInRadius } from '../fetchData/fetchData'
@@ -9,7 +9,7 @@ import parameterConfig from '../config/parameterConfig'
 export const getAllRadiusCombinations = async () => {
 	// write form here, in order to be written only once
 	// tslint:disable-next-line:max-line-length
-	appendToFile(`jupyter/predictions.csv`, `Radius,Real_Magnitude,Random_Forest_Classifier,Multi_Layer_Perceptron,MLP_With_Scaling,Logistic_Regression,Support_Vector_Machines,Random_Forests\n`)
+	writeToFile(`jupyter/predictions.csv`, `Radius,Real_Magnitude,Random_Forest_Classifier,Multi_Layer_Perceptron,MLP_With_Scaling,Logistic_Regression,Support_Vector_Machines\n`)
 
 	// first quake (for which we predict) should always be the same for all computations, radius and params
 	const targetQuake = await getTargetQuake()
