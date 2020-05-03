@@ -4,7 +4,7 @@ import { regions } from '../config/regionCoordinates'
 dotenv.config()
 
 const startDate = new Date(2020, 3, 1)
-const endDate = new Date(1900, 11, 1)
+const endDate = new Date(1900, 3, 1)
 
 export const algoEnum = {
 	PROPAGATION: 'propagation',
@@ -21,7 +21,7 @@ export default {
 	STARTTIME: startDate.toISOString(),
 	ENDTIME: endDate.toISOString(),
 	LIMIT: maxGraphSize < 2000 ? '' + maxGraphSize : '2000',
-	RADIUSES: ['50', '200', '1000', '1500', '3000', '5000'],
+	RADIUSES: ['50', '200', '500', '1000', '1500', '3000', '5000', '8000'],
 	MAX_GRAPH_SIZE: maxGraphSize,
 	MAX_NR_OF_CHILDREN: maxNrOfChildren,
 	DAYS_BETWEEN_QUAKES: 10000,

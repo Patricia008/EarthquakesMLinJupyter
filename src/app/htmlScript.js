@@ -64,10 +64,12 @@ require([
 				center: jsonResponse[0] && [jsonResponse[0].geometry.coordinates[0], jsonResponse[0].geometry.coordinates[1]],
 				zoom: 5,
 			})
-		
+
+			const targetQuake = jsonResponse.shift()
+
 			jsonResponse.forEach(vertex => {
 				// Mark the earthquake with a point
-				createAndAddPoint(Graphic, graphicsLayer, vertex.geometry.coordinates[0], vertex.geometry.coordinates[1])
+				createAndAddPoint(Graphic, graphicsLayer, vertex.geometry.coordinates[0], vertex.geometry.coordinates[1], [226, 119, 40])
 				// Draw lines between earthquakes
 				// const adjQuakes = vertex[1]
 				// adjQuakes.forEach(adjVertex => {
@@ -82,11 +84,14 @@ require([
 				// 	)
 				// })
 			})
+
+			// add target quake in indigo, last to put it above
+			createAndAddPoint(Graphic, graphicsLayer, targetQuake.geometry.coordinates[0], targetQuake.geometry.coordinates[1], [128,0,255])
 		})
 
 })
 
-function createAndAddPoint(Graphic, graphicsLayer, long, lat) {
+function createAndAddPoint(Graphic, graphicsLayer, long, lat, color) {
 	const point = {
 		type: "point",
 		longitude:long,
@@ -94,7 +99,7 @@ function createAndAddPoint(Graphic, graphicsLayer, long, lat) {
 	};
 	const simpleMarkerSymbol = {
 		type: "simple-marker",
-		color: [226, 119, 40],
+		color: color,
 		outline: {
 			color: [255, 255, 255],
 			width: 1

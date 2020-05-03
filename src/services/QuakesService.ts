@@ -20,8 +20,13 @@ export async function getAllQuakesForParams(radius: string, targetQuake: Earthqu
 	// tslint:disable-next-line:max-line-length
 	csv += `${targetQuake.geometry.coordinates[1]},${targetQuake.geometry.coordinates[0]},${targetQuake.geometry.coordinates[2]},${targetQuake.properties.mag}\n`
 	let offset = 1
+	let location = coordinates[parameterConfig.START_POINT]
+	if (radius === 'global') {
+		radius = null
+		location = null
+	}
 	let usgsData = await getCustomEarthquakesInRadius(
-		coordinates[parameterConfig.START_POINT],
+		location,
 		radius,
 		parameterConfig.STARTTIME,
 		parameterConfig.ENDTIME,

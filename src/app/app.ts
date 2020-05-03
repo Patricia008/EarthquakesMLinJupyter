@@ -29,6 +29,9 @@ export const getAllRadiusCombinations = async () => {
 		await getAllQuakes(r, targetQuake)
 		callJupyterForRadius(r)
 	}
+	// get quakes without location contraints
+	// await getAllQuakes('global', targetQuake)
+	// callJupyterForRadius('global')
 }
 
 // get all earthquakes in region

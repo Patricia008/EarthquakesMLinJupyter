@@ -85,14 +85,17 @@ export const getEarthquakesInRadiusForward = async ({lat, long}, maxRadiusKm, st
 
 
 export const getCustomEarthquakesInRadius = async (
-	{lat, long}, maxRadiusKm, startTime, endTime, orderBy = 'time', limit = parameterConfig.LIMIT, offset = '1') => {
-
+	location, maxRadiusKm, startTime, endTime, orderBy = 'time', limit = parameterConfig.LIMIT, offset = '1') => {
 	const queryParams = new URLSearchParams()
+	if (location) {
+		queryParams.set('longitude', location.long)
+		queryParams.set('latitude', location.lat)
+	}
+	if (maxRadiusKm) {
+		queryParams.set('maxradiuskm', maxRadiusKm)
+	}
 	queryParams.set('starttime', endTime)
 	queryParams.set('endtime', startTime)
-	queryParams.set('longitude', long)
-	queryParams.set('latitude', lat)
-	queryParams.set('maxradiuskm', maxRadiusKm)
 	queryParams.set('limit', limit)
 	queryParams.set('orderby', orderBy)
 	queryParams.set('offset', offset)
