@@ -9,7 +9,7 @@ import parameterConfig from '../config/parameterConfig'
 export const getAllRadiusCombinations = async () => {
 	// write form here, in order to be written only once
 	// tslint:disable-next-line:max-line-length
-	writeToFile(`jupyter/predictions.csv`, `Radius,Real_Magnitude,Random_Forest_Classifier,Multi_Layer_Perceptron,MLP_With_Scaling,Logistic_Regression,Support_Vector_Machines\n`)
+	writeToFile(`jupyter/predictions.csv`, `Radius,Real_Magnitude,Random_Forest_Classifier,Multilayer_Perceptron,MLP_With_Scaling,Logistic_Regression,Support_Vector_Machines\n`)
 
 	// first quake (for which we predict) should always be the same for all computations, radius and params
 	const targetQuake = await getTargetQuake()
